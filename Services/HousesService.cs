@@ -31,4 +31,31 @@ public class HousesService
         return house;
     }
 
+    internal House Create(House houseData)
+    {
+        House house = _repo.Create(houseData);
+        return house;
+    }
+
+    internal House Update(House houseUpdate, int id)
+    {
+        House original = Get(id);
+        original.Title = houseUpdate.Title ?? original.Title;
+        original.Price = houseUpdate.Price ?? original.Price;
+        original.Address = houseUpdate.Address ?? original.Address;
+        original.Bedrooms = houseUpdate.Bedrooms ?? original.Bedrooms;
+        original.Bathrooms = houseUpdate.Bathrooms ?? original.Bathrooms;
+        original.Levels = houseUpdate.Levels ?? original.Levels;
+        original.Year = houseUpdate.Year ?? original.Year;
+        original.imgUrl = houseUpdate.imgUrl ?? original.imgUrl;
+        original.Description = houseUpdate.Description ?? original.Description;
+
+        bool edited = _repo.Update(original);
+        if (edited == false)
+        {
+            throw new Exception("House was not edited");
+        }
+        return original;
+    }
+
 }

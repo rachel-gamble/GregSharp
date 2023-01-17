@@ -190,4 +190,20 @@ VALUES (
         'Beautiful cobblestone. 80 year old vintage building, new kitchen. Perfect studio for a single, couple or small family. Grape and olive trees outside.'
     );
 
+SELECT LAST_INSERT_ID();
+
+UPDATE houses
+SET
+    title = '🛥️ House Boat',
+    price = '120000',
+    address = 'Currently in Sparkle Cove',
+    bedrooms = 1,
+    bathrooms = 1,
+    levels = 2.5 year = 2011,
+    imgUrl = 'https://images.unsplash.com/photo-1589139312487-1918d32befe4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+    description = "It's a house, on a boat."
+WHERE id = 4;
+
+DELETE from houses WHERE id = 120;
+
 -- SECTION JOBS

@@ -23,5 +23,8 @@
         "titleBar.inactiveBackground": "#78d24f99",
         "titleBar.inactiveForeground": "#15202b99"
     },
-    "peacock.color": "#78d24f"
+    "peacock.color": "#78d24f",
+    "cSpell.ignoreWords": [
+        "housedata"
+    ]
 }
