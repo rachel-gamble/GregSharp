@@ -58,4 +58,17 @@ public class HousesService
         return original;
     }
 
+    internal string Remove(int id)
+    {
+        House house = Get(id);
+        bool deleted = _repo.Remove(id);
+        if (deleted == false)
+            if (deleted == false)
+            {
+                throw new Exception("no house was deleted");
+            }
+        // another if
+        return $"{house.Title} {house.Bedrooms} {house.Bathrooms} was removed.";
+    }
+
 }
