@@ -7,6 +7,7 @@ namespace GregSharp.Models
 {
     public class Job
     {
+        public int Id { get; set; }
         public string Company { get; set; }
         public string jobTitle { get; set; }
         public int Salary { get; set; }
