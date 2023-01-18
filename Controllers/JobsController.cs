@@ -59,7 +59,7 @@ public class JobsController : ControllerBase
         }
     }
 
-    [HttpPut("{id")]
+    [HttpPut("{id}")]
 
     public ActionResult<Job> Update([FromBody] Job jobUpdate, int id)
     {
@@ -74,5 +74,4 @@ public class JobsController : ControllerBase
             throw;
         }
     }
-
 }
