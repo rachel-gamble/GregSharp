@@ -70,4 +70,14 @@ public class JobsRepository
         int rows = _db.Execute(sql, original);
         return rows > 0;
     }
+
+    internal bool Remove(int id)
+    {
+        string sql = @"
+        DELETE FROM jobs
+        WHERE id = @id;
+        ";
+        int rows = _db.Execute(sql, new { id });
+        return rows > 0;
+    }
 }

@@ -54,4 +54,15 @@ public class JobsService
         }
         return original;
     }
+
+    internal string Remove(int id)
+    {
+        Job job = Get(id);
+        bool deleted = _repo.Remove(id);
+        if (deleted == false)
+        {
+            throw new Exception("no job was deleted");
+        }
+        return $"{job.jobTitle} was removed.";
+    }
 }

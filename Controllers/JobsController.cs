@@ -74,4 +74,18 @@ public class JobsController : ControllerBase
             throw;
         }
     }
+
+    [HttpDelete("{id}")]
+    public ActionResult<string> Remove(int id)
+    {
+        try
+        {
+            string message = _jobsService.Remove(id);
+            return Ok(message);
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+    }
 }
