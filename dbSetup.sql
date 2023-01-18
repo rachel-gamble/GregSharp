@@ -207,3 +207,63 @@ WHERE id = 4;
 DELETE from houses WHERE id = 120;
 
 -- SECTION JOBS
+
+CREATE TABLE
+    jobs(
+        id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        company VARCHAR(100) NOT NULL,
+        jobTitle VARCHAR(150) NOT NULL,
+        salary DOUBLE NOT NULL,
+        hours INT NOT NULL,
+        prerequisites VARCHAR(255),
+        imgUrl VARCHAR(255) NOT NULL DEFAULT 'https://images.unsplash.com/photo-1487528278747-ba99ed528ebc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+        description TEXT NOT NULL,
+        createdAt DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT 'Time Created',
+        updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Last Update'
+    ) default charset utf8 COMMENT '';
+
+DROP TABLE jobs;
+
+INSERT INTO
+    jobs(
+        company,
+        jobTitle,
+        salary,
+        hours,
+        prerequisites,
+        `imgUrl`,
+        description
+    )
+VALUES (
+        'OceanTech',
+        'Deep Sea Software Engineer',
+        120000,
+        40,
+        'n/a',
+        '',
+        'Help us explore the ocean by writing the code for our machines.'
+    );
+
+INSERT INTO
+    jobs(
+        company,
+        jobTitle,
+        salary,
+        hours,
+        prerequisites,
+        `imgUrl`,
+        description
+    )
+VALUES (
+        'Spector',
+        'Ghost Hunger',
+        40000,
+        55,
+        'A deep belief in ghosts and ghouls.',
+        'https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80',
+        'America the Haunted.'
+    );
+
+SELECT LAST_INSERT_ID();
+
+DELETE from jobs WHERE id = 120;

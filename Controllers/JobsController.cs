@@ -32,7 +32,7 @@ public class JobsController : ControllerBase
     }
 
     [HttpPost]
-    public ActionResult<Job> Create([FromBody] House jobData)
+    public ActionResult<Job> Create([FromBody] Job jobData)
     {
         try
         {
@@ -42,6 +42,36 @@ public class JobsController : ControllerBase
         catch (Exception e)
         {
             return BadRequest(e.Message);
+        }
+    }
+
+    [HttpGet("{id}")]
+    public ActionResult<Job> Get(int id)
+    {
+        try
+        {
+            Job job = _jobsService.Get(id);
+            return Ok(job);
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+    }
+
+    [HttpPut("{id")]
+
+    public ActionResult<Job> Update([FromBody] Job jobUpdate, int id)
+    {
+        try
+        {
+            Job job = _jobsService.Update(jobUpdate, id);
+            return Ok(job);
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+            throw;
         }
     }
 

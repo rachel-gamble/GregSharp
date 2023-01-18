@@ -21,6 +21,7 @@ public class HousesService
         List<House> houses = _repo.Get();
         return houses;
     }
+
     internal House Get(int id)
     {
         House house = _repo.Get(id);
