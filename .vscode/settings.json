@@ -21,7 +21,8 @@
         "titleBar.activeForeground": "#15202b",
         "titleBar.border": "#78d24f",
         "titleBar.inactiveBackground": "#78d24f99",
-        "titleBar.inactiveForeground": "#15202b99"
+        "titleBar.inactiveForeground": "#15202b99",
+        "panel.border": "#97dc78"
     },
     "peacock.color": "#78d24f",
     "cSpell.ignoreWords": [
